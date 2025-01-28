@@ -81,7 +81,6 @@ header .brand-nav {
     height: 60px;
     background: rgb(0, 0, 0);
     color: white;
-    padding: 0px 20px ;
 }
 
 header .brand-nav ul {
@@ -92,6 +91,7 @@ header .brand-nav ul {
     justify-content: space-between;
     list-style-type: none;
     transition: .3s linear;
+    padding: 0px 20px ;
 }
 
 header .brand-nav ul li {
@@ -144,4 +144,92 @@ header .brand-nav ul li:nth-child(2){
     background: orangered;
     width: 130px;
 }
+
+header .brand-nav ul li:nth-child(1) .select_bx{
+    position: absolute;
+    top: 100%;
+    width: 90px;
+    height: 0px;
+    background-color: orangered;
+    padding: 10px ;
+    border-radius: 5px;
+    z-index: 9999999999999;
+    box-shadow: 0px 0px 20px rgb(0,0,0,.5);
+    overflow: hidden;
+    transition: 1s linear;
+    opacity: 0;
+}
+
+header .brand-nav ul li:nth-child(1) .select_bx h5{
+    padding: 5px 0px ;
+}
+
+header .brand-nav ul li:nth-child(1) .select_bx_active{
+    height: 100px;
+    opacity: 1;
+}
+
+/* Creating header 3*/
+
+header .brand-nav .list-box {
+    width: 100%;
+    height: auto;
+    background: orangered;
+    padding: 8px 0px;
+}
+
+header .brand-nav .list-box li{
+    color: white;
+    font-size: 14px;
+    display: inline-block;
+    transition: .3s linear;
+}
+
+header .brand-nav .list-box li:hover{
+    color: black;
+    cursor: pointer;
+    transform: scale(1.1);
+    font-weight: 700;
+
+}
+
+/*Creating the main page */
+
+section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 34px auto 0px auto;
+    background: white;
+}
+
+section aside , .shoes{
+    width: 80%;
+
+}
+
+section aside {
+    width: 20%;
+}
+
+section .shoes {
+    padding: 0px 30px ;
+}
+
+section .shoes nav {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(0,0,0,.1);
+}
+
+section .shoes nav h6 i{
+    margin: 0px 3px ;
+}
+
+section .shoes nav h6  span {
+    color: grey;
+}
+
 
