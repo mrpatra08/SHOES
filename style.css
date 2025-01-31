@@ -274,3 +274,32 @@ section .shoes section .title_sortby .select_shortby button i{
     font-size: 10px;
     color: grey;
 }
+
+section .shoes section .title_sortby .select_shortby .sortby_opt{
+    position: absolute;
+    width: 150px;
+    height: auto;
+    padding: 5px 10px 10px 10px ;
+    background: white;
+    border-radius: 5px ;
+    text-align: center;
+    overflow: hidden;
+    transition: .3s linear;
+}
+
+section .shoes section .title_sortby .select_shortby .sortby_opt li {
+    list-style: none;
+    padding: 5px 0px ;
+    background: rgb(0,0,0,.1);
+    margin-top: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+section .shoes section .title_sortby .select_shortby .sortby_opt li:hover{
+    background: black;
+    color: whitesmoke;
+}
