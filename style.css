@@ -428,3 +428,27 @@ section .shoes  .pagination h6{
     font-weight: 800;
     font-size: 12px;
 }
+
+section aside{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 40px;
+    margin-right: 25px ;
+}
+
+section aside .filter_bx {
+    width: 300px;
+    height: auto;
+    background: rgb(0,0,0,.1);
+    padding: 10px ;
+}
+
+section aside .filter_bx .filter {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+section aside .filter_bx  .total_shoes{
+    font-size: 12px;
+    margin-top: 5px;
+}
