@@ -333,5 +333,47 @@ section .shoes .main_shoes_bx .card {
 
 section .shoes .main_shoes_bx .card:hover{
     box-shadow: 0px 0px 20px rgb(0,0,0,.2);
-    transform: scale(1.1);
+}
+
+section .shoes .main_shoes_bx .card img {
+    width: 100%;
+    height: 150px;
+}
+
+section .shoes .main_shoes_bx .card  .title{
+    font-size: 11px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: black;
+}
+
+section .shoes .main_shoes_bx .card p {
+    font-size: 11px;
+    font-weight: 500;
+    color: grey;
+}
+
+section .shoes .main_shoes_bx .card .price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+}
+
+section .shoes .main_shoes_bx .card .price h5 {
+    font-size: 11px;
+    color: black;
+
+}
+
+section .shoes .main_shoes_bx .card .price h5:nth-child(2){
+    color: gray;
+    font-size: 10px;
+    font-weight: 300;
+}
+
+section .shoes .main_shoes_bx .card .color_tag{
+    
 }
