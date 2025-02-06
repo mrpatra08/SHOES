@@ -322,8 +322,8 @@ section .shoes .main_shoes_bx{
 
 section .shoes .main_shoes_bx .card {
     position: relative;
-    width: 170px;
-    height: 260px;
+    width: 250px;
+    height: 290px;
     /* border: 1px solid black; */
     margin: 5px 5px 25px 0px;
     text-decoration: none;
@@ -338,7 +338,7 @@ section .shoes .main_shoes_bx .card:hover{
 
 section .shoes .main_shoes_bx .card img {
     width: 100%;
-    height: 150px;
+    height: 180px;
 }
 
 section .shoes .main_shoes_bx .card  .title{
@@ -392,4 +392,39 @@ section .shoes .main_shoes_bx .card .color_tag h6 {
 
 section .shoes .main_shoes_bx .card .color_tag h6:nth-child(2){
     color: orangered;
+}
+
+section .shoes  .pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0px 30px 0px;
+}
+
+section .shoes  .pagination a{
+    width: 20%;
+    padding: 8px 0px;
+    text-decoration: none;
+    border: 1px solid rgb(0,0,0,.1);
+    text-align: center;
+    font-size: 12px;
+    transition: .3s linear;
+    width: 40px;
+    border-radius: 40px;
+}
+
+section .shoes  .pagination a:hover {
+    color: white;
+    background: orangered;
+    
+}
+
+section .shoes  .pagination h6{
+    text-align: center;
+    padding: 8px 0px ;
+    color: orangered;
+    margin: 10px 10px;
+    font-weight: 800;
+    font-size: 12px;
 }
