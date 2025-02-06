@@ -317,22 +317,23 @@ section .shoes .main_shoes_bx{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex: wrap;
+    flex-wrap: wrap;
 }
 
 section .shoes .main_shoes_bx .card {
     position: relative;
-    width: 150px;
-    height: 240px;
+    width: 170px;
+    height: 260px;
     /* border: 1px solid black; */
     margin: 5px 5px 25px 0px;
     text-decoration: none;
     transition: .3s linear;
-    display: inline-block;
+    padding: 10px 10px ;
 }
 
 section .shoes .main_shoes_bx .card:hover{
     box-shadow: 0px 0px 20px rgb(0,0,0,.2);
+    border-radius: 5px;
 }
 
 section .shoes .main_shoes_bx .card img {
@@ -375,5 +376,20 @@ section .shoes .main_shoes_bx .card .price h5:nth-child(2){
 }
 
 section .shoes .main_shoes_bx .card .color_tag{
-    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    border-top: 1px solid rgb(0,0,0,.1);
+}
+
+section .shoes .main_shoes_bx .card .color_tag h6 {
+    font-size: 8.5px;
+    margin-top: 3px;
+    color: gray;
+    font-weight: 500;
+}
+
+section .shoes .main_shoes_bx .card .color_tag h6:nth-child(2){
+    color: orangered;
 }
