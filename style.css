@@ -479,7 +479,7 @@ section aside .filter_bx .shoes_check .shoes_checked1 h6 {
 }
 
 section aside .filter_bx .shoes_check .shoes_checked1 i{
-    font-size: 18px;
+    font-size: 20px;
 }
 
 
@@ -500,5 +500,15 @@ section aside .filter_bx .shoes_check li {
 }
 
 section aside .filter_bx .shoes_check li i {
-    font-size: 16px;
+    font-size: 20px;
+    transition: .3s linear;
+    cursor: pointer;
+}
+
+section aside .filter_bx .shoes_check li i:hover {
+    color: orangered;
+}
+
+section aside .filter_bx .shoes_check li .i_active {   /*javascript class*/
+    color: orangered;
 }
