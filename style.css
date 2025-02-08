@@ -164,7 +164,7 @@ header .brand-nav ul li:nth-child(1) .select_bx h5{
     padding: 5px 0px ;
 }
 
-header .brand-nav ul li:nth-child(1) .select_bx_active{
+header .brand-nav ul li:nth-child(1) .select_bx_active{    /* javascript class */
     height: 100px;
     opacity: 1;
 }
@@ -305,7 +305,7 @@ section .shoes section .title_sortby .select_shortby .sortby_opt li:hover{
     color: whitesmoke;
 }
 
-section .shoes section .title_sortby .select_shortby .sortby_opt_active{
+section .shoes section .title_sortby .select_shortby .sortby_opt_active{  /* javascript class */
     height: 150px;
     opacity: 1;
     z-index: 999999999;
@@ -461,4 +461,44 @@ section aside .filter_bx .shoes_check {
     height: auto;
     border-top: 1px solid rgb(0,0,0,.1);
     margin-top: 10px;
+}
+
+section aside .filter_bx .shoes_check .shoes_checked1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 8px ;
+    margin: 10px 0px ;
+    background: black;
+    color: white;
+}
+
+section aside .filter_bx .shoes_check .shoes_checked1 h6 {
+    font-size: 14px;
+}
+
+section aside .filter_bx .shoes_check .shoes_checked1 i{
+    font-size: 18px;
+}
+
+
+section aside .filter_bx .shoes_check_off {    /* javascript class */
+    background: none;
+    color: black;
+}
+
+section aside .filter_bx .shoes_check li {
+    width: 90%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+section aside .filter_bx .shoes_check li i {
+    font-size: 16px;
 }
