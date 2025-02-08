@@ -512,3 +512,44 @@ section aside .filter_bx .shoes_check li i:hover {
 section aside .filter_bx .shoes_check li .i_active {   /*javascript class*/
     color: orangered;
 }
+
+
+section aside .filter_bx .shoes_check .input_price {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+section aside .filter_bx .shoes_check .input_price::before {
+    content: '';
+    position: absolute;
+    width: 88%;
+    height: 3px;
+    background: rgb(0,0,0,.2);
+    top: 10px;
+    left: 0;
+}
+
+section aside .filter_bx .shoes_check .input_price .input1 {
+    position: relative;
+    width: 44%;
+}
+
+section aside .filter_bx .shoes_check .input_price .input1 input {
+    z-index: 99999999999999999999;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+section aside .filter_bx .shoes_check .input_price .input1 i{
+    position: absolute;
+    top: 0px;
+    left: 0%;
+    transition: 1s linear;
+}
+
+section aside .filter_bx .shoes_check .input_price .input1:nth-child(2) i{
+    left: 100%;
+
+}
