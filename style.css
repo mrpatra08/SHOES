@@ -203,7 +203,7 @@ section{
     background: white;
 }
 
-section aside , .shoes{
+section  .shoes{
     width: 80%;
 
 }
@@ -451,4 +451,14 @@ section aside .filter_bx .filter {
 section aside .filter_bx  .total_shoes{
     font-size: 12px;
     margin-top: 5px;
+}
+
+
+
+
+section aside .filter_bx .shoes_check {
+    width: 100%;
+    height: auto;
+    border-top: 1px solid rgb(0,0,0,.1);
+    margin-top: 10px;
 }
