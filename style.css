@@ -551,5 +551,17 @@ section aside .filter_bx .shoes_check .input_price .input1 i{
 
 section aside .filter_bx .shoes_check .input_price .input1:nth-child(2) i{
     left: 100%;
+}
 
+section aside .filter_bx .shoes_check .input_rate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+section aside .filter_bx .shoes_check .input_rate h6 {
+    border: 1px solid rgb(0,0,0,.3);
+    padding: 3px 12px ;
+    color: rgb(0,0,0,.8);
 }
