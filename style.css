@@ -633,3 +633,18 @@ section aside .filter_bx .shoes_check .color_bx h6:nth-child(14){
     border-bottom: 3.3px solid pink;
     border-left: 3.3px solid orange;
 }
+
+
+section aside .filter_bx .shoes_check .size_bx {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+section aside .filter_bx .shoes_check .size_bx h6 {
+    border: 2px solid rgb(0,0,0,.7);
+    color: rgb(0,0,0,.7);
+    padding: 5px 7px ;
+    margin: 5px;
+    cursor: pointer;
+}
