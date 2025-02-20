@@ -22,7 +22,7 @@ fetch(url).then((Response => Response.json())).then((data)=>{
 
     const low_array =[...data];
     const high_array =[...data];
-    const newest_array = data.splice(0,8);
+    const newest_array = [...data].splice(0,8);
 
     //getting all the cards ;
     data.forEach((el,i) => {
@@ -53,6 +53,60 @@ main_shoes_bx.appendChild(card)
         sortby_opt.classList.toggle('sortby_opt_active');
 
         newest_array.forEach((el,i) => {
+            const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+                        <h5 class="title" title = "${Name}">${Name}</h5>
+                        <p>${Category} shoes</p>
+                        <div class="price">
+                            <h5>Rs ${Price}</h5>
+                            <h5>MRP: <del>Rs ${MRP}</del></h5>
+                        </div>
+                        <div class="color_tag">
+                            <h6>color ${Color}</h6>
+                            <h6>${Tag}</h6>
+                        </div>`;
+    
+    main_shoes_bx.appendChild(card)
+        });
+    });
+
+    all_shoes.addEventListener("click", () =>{
+        main_shoes_bx.innerHTML = '';
+        sortby_btn.innerHTML = `<h5>Sort By: All Shoes</h5>
+                            <i class="bi bi-chevron-down"></i>`;
+        sortby_opt.classList.toggle('sortby_opt_active');
+
+        all_shoes_array.forEach((el,i) => {
+            const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+                        <h5 class="title" title = "${Name}">${Name}</h5>
+                        <p>${Category} shoes</p>
+                        <div class="price">
+                            <h5>Rs ${Price}</h5>
+                            <h5>MRP: <del>Rs ${MRP}</del></h5>
+                        </div>
+                        <div class="color_tag">
+                            <h6>color ${Color}</h6>
+                            <h6>${Tag}</h6>
+                        </div>`;
+    
+    main_shoes_bx.appendChild(card)
+        });
+    });
+
+    low.addEventListener("click", () =>{
+        main_shoes_bx.innerHTML = '';
+        sortby_btn.innerHTML = `<h5>Sort By: Low</h5>
+                            <i class="bi bi-chevron-down"></i>`;
+        sortby_opt.classList.toggle('sortby_opt_active');
+
+        low_array.sort(({Price : a}, {Price : b}) => a-b)
+
+        low_array.forEach((el,i) => {
             const{Img,Name,Category,MRP,Price,Tag,Color} = el;
             let card = document.createElement('a');
             card.classList.add('card');
