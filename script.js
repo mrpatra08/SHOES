@@ -156,4 +156,19 @@ main_shoes_bx.appendChild(card)
     });
 
 
+    let boot_array = all_shoes_array.filter((el) => {  //filterng type - boots
+        return el.Type === 'Boots';
+    });
+
+    let All_Main_filter_array = [];
+
+    let boots = document.getElementById('boots');
+    boots.addEventListener('click', ()=>{
+        if (boots.title=== "boots_filter_on"){
+            main_shoes_bx.innerHTML = " ";
+            boots.classList.toggle('i_active');
+            boots.classList.toggle('bi-toggle2-off'); //help to change the uton on click
+            boots.classList.toggle('bi-toggle2-on');
+        }
+    })
 });
