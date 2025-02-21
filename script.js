@@ -202,7 +202,71 @@ main_shoes_bx.appendChild(card)
                 return boot_array.indexOf(el) < 0 ;
             });
 
+            all_shoes_array.forEach((el,i) => {
+                const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                            <h5 class="title" title = "${Name}">${Name}</h5>
+                            <p>${Category} shoes</p>
+                            <div class="price">
+                                <h5>Rs ${Price}</h5>
+                                <h5>MRP: <del>Rs ${MRP}</del></h5>
+                            </div>
+                            <div class="color_tag">
+                                <h6>color ${Color}</h6>
+                                <h6>${Tag}</h6>
+                            </div>`;
+        
+        main_shoes_bx.appendChild(card)
+        });
+        }
+    });
+
+    let loafer_array = all_shoes_array.filter((el) => {  //filterng type - boots
+        return el.Type === 'Loafer';
+    });
+    let loafer = document.getElementById('loafer');
+
+    loafer.addEventListener('click', () => {
+        if (loafer.title=== "loafer_filter_on"){
+            main_shoes_bx.innerHTML = '';
+            loafer.classList.toggle('i_active');
+            loafer.classList.toggle('bi-toggle2-off'); //help to change the uton on click
+            loafer.classList.toggle('bi-toggle2-on');
+            loafer.title = 'loafer_filter_off';
+            All_Main_filter_array = All_Main_filter_array.concat(loafer_array); //merging the loafer array into the all main array 
+
             All_Main_filter_array.forEach((el,i) => {
+                const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                            <h5 class="title" title = "${Name}">${Name}</h5>
+                            <p>${Category} shoes</p>
+                            <div class="price">
+                                <h5>Rs ${Price}</h5>
+                                <h5>MRP: <del>Rs ${MRP}</del></h5>
+                            </div>
+                            <div class="color_tag">
+                                <h6>color ${Color}</h6>
+                                <h6>${Tag}</h6>
+                            </div>`;
+        
+        main_shoes_bx.appendChild(card)
+            });
+        }
+        else {
+            main_shoes_bx.innerHTML = '';
+            loafer.classList.toggle('i_active');
+            loafer.classList.toggle('bi-toggle2-off'); 
+            loafer.classList.toggle('bi-toggle2-on');
+            loafer.title = 'loafer_filter_on';
+            All_Main_filter_array = All_Main_filter_array.filter((el)=> { //helping to prevent from copying the same loafer multiple times on click
+                return loafer_array.indexOf(el) < 0 ;
+            });
+
+            all_shoes_array.forEach((el,i) => {
                 const{Img,Name,Category,MRP,Price,Tag,Color} = el;
                 let card = document.createElement('a');
                 card.classList.add('card');
