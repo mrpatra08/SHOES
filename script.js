@@ -163,12 +163,62 @@ main_shoes_bx.appendChild(card)
     let All_Main_filter_array = [];
 
     let boots = document.getElementById('boots');
-    boots.addEventListener('click', ()=>{
+    boots.addEventListener('click', () => {
         if (boots.title=== "boots_filter_on"){
             main_shoes_bx.innerHTML = " ";
             boots.classList.toggle('i_active');
             boots.classList.toggle('bi-toggle2-off'); //help to change the uton on click
             boots.classList.toggle('bi-toggle2-on');
+            boots.title = 'boots_fiter_off';
+            All_Main_filter_array = All_Main_filter_array.concat(boot_array); //merging the boot array into the all main array 
+
+            All_Main_filter_array.forEach((el,i) => {
+                const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                            <h5 class="title" title = "${Name}">${Name}</h5>
+                            <p>${Category} shoes</p>
+                            <div class="price">
+                                <h5>Rs ${Price}</h5>
+                                <h5>MRP: <del>Rs ${MRP}</del></h5>
+                            </div>
+                            <div class="color_tag">
+                                <h6>color ${Color}</h6>
+                                <h6>${Tag}</h6>
+                            </div>`;
+        
+        main_shoes_bx.appendChild(card)
+            });
         }
-    })
+        else {
+            main_shoes_bx.innerHTML = ' ';
+            boots.classList.toggle('i_active');
+            boots.classList.toggle('bi-toggle2-off'); 
+            boots.classList.toggle('bi-toggle2-on');
+            boots.title = 'boots_fiter_on';
+            All_Main_filter_array = All_Main_filter_array.filter((el)=> {
+                return boot_array.indexOf(el) < 0 ;
+            });
+
+            All_Main_filter_array.forEach((el,i) => {
+                const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                            <h5 class="title" title = "${Name}">${Name}</h5>
+                            <p>${Category} shoes</p>
+                            <div class="price">
+                                <h5>Rs ${Price}</h5>
+                                <h5>MRP: <del>Rs ${MRP}</del></h5>
+                            </div>
+                            <div class="color_tag">
+                                <h6>color ${Color}</h6>
+                                <h6>${Tag}</h6>
+                            </div>`;
+        
+        main_shoes_bx.appendChild(card)
+        });
+        }
+    });
 });
