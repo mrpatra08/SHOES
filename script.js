@@ -156,12 +156,12 @@ main_shoes_bx.appendChild(card)
     });
 
 
+    // filter system for boot 
+
     let boot_array = all_shoes_array.filter((el) => {  //filterng type - boots
         return el.Type === 'Boots';
     });
-
     let All_Main_filter_array = [];
-
     let boots = document.getElementById('boots');
 
     boots.addEventListener('click', () => {
@@ -223,6 +223,9 @@ main_shoes_bx.appendChild(card)
         }
     });
 
+
+    //filter system for loafer 
+    
     let loafer_array = all_shoes_array.filter((el) => {  //filterng type - boots
         return el.Type === 'Loafer';
     });
