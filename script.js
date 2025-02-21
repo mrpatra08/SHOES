@@ -163,13 +163,14 @@ main_shoes_bx.appendChild(card)
     let All_Main_filter_array = [];
 
     let boots = document.getElementById('boots');
+
     boots.addEventListener('click', () => {
         if (boots.title=== "boots_filter_on"){
-            main_shoes_bx.innerHTML = " ";
+            main_shoes_bx.innerHTML = '';
             boots.classList.toggle('i_active');
             boots.classList.toggle('bi-toggle2-off'); //help to change the uton on click
             boots.classList.toggle('bi-toggle2-on');
-            boots.title = 'boots_fiter_off';
+            boots.title = 'boots_filter_off';
             All_Main_filter_array = All_Main_filter_array.concat(boot_array); //merging the boot array into the all main array 
 
             All_Main_filter_array.forEach((el,i) => {
@@ -192,12 +193,12 @@ main_shoes_bx.appendChild(card)
             });
         }
         else {
-            main_shoes_bx.innerHTML = ' ';
+            main_shoes_bx.innerHTML = '';
             boots.classList.toggle('i_active');
             boots.classList.toggle('bi-toggle2-off'); 
             boots.classList.toggle('bi-toggle2-on');
-            boots.title = 'boots_fiter_on';
-            All_Main_filter_array = All_Main_filter_array.filter((el)=> {
+            boots.title = 'boots_filter_on';
+            All_Main_filter_array = All_Main_filter_array.filter((el)=> { //helping to prevent from copying the same boots multiple times on click
                 return boot_array.indexOf(el) < 0 ;
             });
 
