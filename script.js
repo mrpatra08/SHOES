@@ -202,7 +202,7 @@ main_shoes_bx.appendChild(card)
                 return boot_array.indexOf(el) < 0 ;
             });
 
-            all_shoes_array.forEach((el,i) => {
+            All_Main_filter_array.forEach((el,i) => {
                 const{Img,Name,Category,MRP,Price,Tag,Color} = el;
                 let card = document.createElement('a');
                 card.classList.add('card');
@@ -225,7 +225,7 @@ main_shoes_bx.appendChild(card)
 
 
     //filter system for loafer 
-    
+
     let loafer_array = all_shoes_array.filter((el) => {  //filterng type - boots
         return el.Type === 'Loafer';
     });
@@ -269,7 +269,7 @@ main_shoes_bx.appendChild(card)
                 return loafer_array.indexOf(el) < 0 ;
             });
 
-            all_shoes_array.forEach((el,i) => {
+            All_Main_filter_array.forEach((el,i) => {
                 const{Img,Name,Category,MRP,Price,Tag,Color} = el;
                 let card = document.createElement('a');
                 card.classList.add('card');
@@ -289,4 +289,9 @@ main_shoes_bx.appendChild(card)
         });
         }
     });
+
+
+    //filter for Air Force 1
+
+
 });
