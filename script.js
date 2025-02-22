@@ -291,7 +291,71 @@ main_shoes_bx.appendChild(card)
     });
 
 
-    //filter for Air Force 1
+    //filter for Icons
+    
+    let air_force_1_array = all_shoes_array.filter((el) => {  //filterng type - boots
+        return el.Type === 'Air Force';
+    });
+    let air_force_1 = document.getElementById('air_force_1');
+
+    air_force_1.addEventListener('click', () => {
+        if (air_force_1.title=== "air_force_1_filter_on"){
+            main_shoes_bx.innerHTML = '';
+            air_force_1.classList.toggle('i_active');
+            air_force_1.classList.toggle('bi-toggle2-off'); //help to change the uton on click
+            air_force_1.classList.toggle('bi-toggle2-on');
+            air_force_1.title = 'air_force_1_filter_off';
+            All_Main_filter_array = All_Main_filter_array.concat(air_force_1_array); //merging the loafer array into the all main array 
+
+            All_Main_filter_array.forEach((el,i) => {
+                const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                            <h5 class="title" title = "${Name}">${Name}</h5>
+                            <p>${Category} shoes</p>
+                            <div class="price">
+                                <h5>Rs ${Price}</h5>
+                                <h5>MRP: <del>Rs ${MRP}</del></h5>
+                            </div>
+                            <div class="color_tag">
+                                <h6>color ${Color}</h6>
+                                <h6>${Tag}</h6>
+                            </div>`;
+        
+        main_shoes_bx.appendChild(card)
+            });
+        }
+        else {
+            main_shoes_bx.innerHTML = '';
+            air_force_1.classList.toggle('i_active');
+            air_force_1.classList.toggle('bi-toggle2-off'); 
+            air_force_1.classList.toggle('bi-toggle2-on');
+            air_force_1.title = 'air_force_1_filter_on';
+            All_Main_filter_array = All_Main_filter_array.filter((el)=> { //helping to prevent from copying the same loafer multiple times on click
+                return air_force_1_array.indexOf(el) < 0 ;
+            });
+
+            All_Main_filter_array.forEach((el,i) => {
+                const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                            <h5 class="title" title = "${Name}">${Name}</h5>
+                            <p>${Category} shoes</p>
+                            <div class="price">
+                                <h5>Rs ${Price}</h5>
+                                <h5>MRP: <del>Rs ${MRP}</del></h5>
+                            </div>
+                            <div class="color_tag">
+                                <h6>color ${Color}</h6>
+                                <h6>${Tag}</h6>
+                            </div>`;
+        
+        main_shoes_bx.appendChild(card)
+        });
+        }
+    });
 
 
 });
