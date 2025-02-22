@@ -291,7 +291,7 @@ main_shoes_bx.appendChild(card)
     });
 
 
-    //filter for Icons
+    //filter for air_force_1
     
     let air_force_1_array = all_shoes_array.filter((el) => {  //filterng type - boots
         return el.Type === 'Air Force';
@@ -356,6 +356,76 @@ main_shoes_bx.appendChild(card)
         });
         }
     });
+
+    
+    // filter for Air Max
+
+    let air_max_array = all_shoes_array.filter((el) => {  //filterng type - boots
+        return el.Type === 'Air Max';
+    });
+    let air_max = document.getElementById('air_max');
+
+    air_max.addEventListener('click', () => {
+        if (air_max.title=== "air_max_filter_on"){
+            main_shoes_bx.innerHTML = '';
+            air_max.classList.toggle('i_active');
+            air_max.classList.toggle('bi-toggle2-off'); //help to change the uton on click
+            air_max.classList.toggle('bi-toggle2-on');
+            air_max.title = 'air_max_filter_off';
+            All_Main_filter_array = All_Main_filter_array.concat(air_max_array); //merging the loafer array into the all main array 
+
+            All_Main_filter_array.forEach((el,i) => {
+                const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                            <h5 class="title" title = "${Name}">${Name}</h5>
+                            <p>${Category} shoes</p>
+                            <div class="price">
+                                <h5>Rs ${Price}</h5>
+                                <h5>MRP: <del>Rs ${MRP}</del></h5>
+                            </div>
+                            <div class="color_tag">
+                                <h6>color ${Color}</h6>
+                                <h6>${Tag}</h6>
+                            </div>`;
+        
+        main_shoes_bx.appendChild(card)
+            });
+        }
+        else {
+            main_shoes_bx.innerHTML = '';
+            air_max.classList.toggle('i_active');
+            air_max.classList.toggle('bi-toggle2-off'); 
+            air_max.classList.toggle('bi-toggle2-on');
+            air_max.title = 'air_max_filter_on';
+            All_Main_filter_array = All_Main_filter_array.filter((el)=> { //helping to prevent from copying the same loafer multiple times on click
+                return air_max_array.indexOf(el) < 0 ;
+            });
+
+            All_Main_filter_array.forEach((el,i) => {
+                const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                            <h5 class="title" title = "${Name}">${Name}</h5>
+                            <p>${Category} shoes</p>
+                            <div class="price">
+                                <h5>Rs ${Price}</h5>
+                                <h5>MRP: <del>Rs ${MRP}</del></h5>
+                            </div>
+                            <div class="color_tag">
+                                <h6>color ${Color}</h6>
+                                <h6>${Tag}</h6>
+                            </div>`;
+        
+        main_shoes_bx.appendChild(card)
+        });
+        }
+    });
+
+
+
 
 
 });
