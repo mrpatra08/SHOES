@@ -17,6 +17,7 @@ let high = document.getElementById('high');
 let url = "json.json";
 let main_shoes_bx = document.getElementsByClassName('main_shoes_bx')[0];
 
+// API call
 fetch(url).then((Response => Response.json())).then((data)=>{
     const all_shoes_array = [...data]; //this help to get the array in the json and also can fetch or get other arrays by using comma ... its an eg. of the process
 
@@ -72,6 +73,8 @@ main_shoes_bx.appendChild(card)
         });
     });
 
+    //targetting all shoes option in sortby
+
     all_shoes.addEventListener("click", () =>{
         main_shoes_bx.innerHTML = '';
         sortby_btn.innerHTML = `<h5>Sort By: All Shoes</h5>
@@ -97,6 +100,8 @@ main_shoes_bx.appendChild(card)
     main_shoes_bx.appendChild(card)
         });
     });
+
+    //targetting low option in sortby
 
     low.addEventListener("click", () =>{
         main_shoes_bx.innerHTML = '';
@@ -125,6 +130,8 @@ main_shoes_bx.appendChild(card)
     main_shoes_bx.appendChild(card)
         });
     });
+
+    //targetting high option in sortby
 
     high.addEventListener("click", () =>{
         main_shoes_bx.innerHTML = '';
@@ -624,5 +631,25 @@ main_shoes_bx.appendChild(card)
         }
     });
 
+    // filtering according to price 
+
+let right_input = document.getElementById("right_input");
+let left_input = document.getElementById("left_input");
+let left_input_icon = document.getElementById("left_input_icon");
+let right_input_icon = document.getElementById("right_input_icon");
+
+let array_1000_50000 = all_shoes_array.filter((el) => {
+    return el.Price <= 50000;
+});
+
+left_input.addEventListener("change", () => {
+    left_input_icon.style.left = left_input.value + "%";
+})
+
+
 
 });
+
+
+
+
