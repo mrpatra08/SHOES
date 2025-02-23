@@ -490,7 +490,72 @@ main_shoes_bx.appendChild(card)
         }
     });
 
+    
+    //filter for metacon 
 
+    let metacon_array = all_shoes_array.filter((el) => {  //filterng type - boots
+        return el.Type === 'Pegasus';
+    });
+    let metacon = document.getElementById('metacon');
+
+    metacon.addEventListener('click', () => {
+        if (metacon.title=== "metacon_filter_on"){
+            main_shoes_bx.innerHTML = '';
+            metacon.classList.toggle('i_active');
+            metacon.classList.toggle('bi-toggle2-off'); //help to change the uton on click
+            metacon.classList.toggle('bi-toggle2-on');
+            metacon.title = 'metacon_filter_off';
+            All_Main_filter_array = All_Main_filter_array.concat(metacon_array); //merging the loafer array into the all main array 
+
+            All_Main_filter_array.forEach((el,i) => {
+                const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                            <h5 class="title" title = "${Name}">${Name}</h5>
+                            <p>${Category} shoes</p>
+                            <div class="price">
+                                <h5>Rs ${Price}</h5>
+                                <h5>MRP: <del>Rs ${MRP}</del></h5>
+                            </div>
+                            <div class="color_tag">
+                                <h6>color ${Color}</h6>
+                                <h6>${Tag}</h6>
+                            </div>`;
+        
+        main_shoes_bx.appendChild(card)
+            });
+        }
+        else {
+            main_shoes_bx.innerHTML = '';
+            metacon.classList.toggle('i_active');
+            metacon.classList.toggle('bi-toggle2-off'); 
+            metacon.classList.toggle('bi-toggle2-on');
+            metacon.title = 'metacon_filter_on';
+            All_Main_filter_array = All_Main_filter_array.filter((el)=> { //helping to prevent from copying the same loafer multiple times on click
+                return metacon_array.indexOf(el) < 0 ;
+            });
+
+            All_Main_filter_array.forEach((el,i) => {
+                const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                            <h5 class="title" title = "${Name}">${Name}</h5>
+                            <p>${Category} shoes</p>
+                            <div class="price">
+                                <h5>Rs ${Price}</h5>
+                                <h5>MRP: <del>Rs ${MRP}</del></h5>
+                            </div>
+                            <div class="color_tag">
+                                <h6>color ${Color}</h6>
+                                <h6>${Tag}</h6>
+                            </div>`;
+        
+        main_shoes_bx.appendChild(card)
+        });
+        }
+    });
 
 
 });
