@@ -424,6 +424,71 @@ main_shoes_bx.appendChild(card)
         }
     });
 
+    //filter for zoom rival
+
+    let zoom_max_array = all_shoes_array.filter((el) => {  //filterng type - boots
+        return el.Type === 'Zoom Rival';
+    });
+    let zoom_max = document.getElementById('zoom_max');
+
+    zoom_max.addEventListener('click', () => {
+        if (zoom_max.title=== "zoom_max_filter_on"){
+            main_shoes_bx.innerHTML = '';
+            zoom_max.classList.toggle('i_active');
+            zoom_max.classList.toggle('bi-toggle2-off'); //help to change the uton on click
+            zoom_max.classList.toggle('bi-toggle2-on');
+            zoom_max.title = 'zoom_max_filter_off';
+            All_Main_filter_array = All_Main_filter_array.concat(zoom_max_array); //merging the loafer array into the all main array 
+
+            All_Main_filter_array.forEach((el,i) => {
+                const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                            <h5 class="title" title = "${Name}">${Name}</h5>
+                            <p>${Category} shoes</p>
+                            <div class="price">
+                                <h5>Rs ${Price}</h5>
+                                <h5>MRP: <del>Rs ${MRP}</del></h5>
+                            </div>
+                            <div class="color_tag">
+                                <h6>color ${Color}</h6>
+                                <h6>${Tag}</h6>
+                            </div>`;
+        
+        main_shoes_bx.appendChild(card)
+            });
+        }
+        else {
+            main_shoes_bx.innerHTML = '';
+            zoom_max.classList.toggle('i_active');
+            zoom_max.classList.toggle('bi-toggle2-off'); 
+            zoom_max.classList.toggle('bi-toggle2-on');
+            zoom_max.title = 'zoom_max_filter_on';
+            All_Main_filter_array = All_Main_filter_array.filter((el)=> { //helping to prevent from copying the same loafer multiple times on click
+                return zoom_max_array.indexOf(el) < 0 ;
+            });
+
+            All_Main_filter_array.forEach((el,i) => {
+                const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                            <h5 class="title" title = "${Name}">${Name}</h5>
+                            <p>${Category} shoes</p>
+                            <div class="price">
+                                <h5>Rs ${Price}</h5>
+                                <h5>MRP: <del>Rs ${MRP}</del></h5>
+                            </div>
+                            <div class="color_tag">
+                                <h6>color ${Color}</h6>
+                                <h6>${Tag}</h6>
+                            </div>`;
+        
+        main_shoes_bx.appendChild(card)
+        });
+        }
+    });
 
 
 
