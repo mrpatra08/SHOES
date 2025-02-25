@@ -717,7 +717,7 @@ right_input.addEventListener("click", () => {
 main_shoes_bx.appendChild(card)
 });
 
-});
+})
 
     //filter by colours 
 
@@ -778,6 +778,34 @@ main_shoes_bx.appendChild(card)
 
     //filter by shoes size 
 
+    const number = [4,7,9,6,5,8,10,11.5,9.5,16,17,18,11,8.5];
+    let size = document.getElementsByClassName('size')[0];
+    size.addEventListener('click', () =>{
+        main_shoes_bx.innerHTML = '';
+        
+        let number_array = all_shoes_array.filter((el) => {
+            return el.Size4 === number[0];
+        })
+
+        number_array.forEach((el,i) => {
+            const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+                        <h5 class="title" title = "${Name}">${Name}</h5>
+                        <p>${Category} shoes</p>
+                        <div class="price">
+                            <h5>Rs ${Price}</h5>
+                            <h5>MRP: <del>Rs ${MRP}</del></h5>
+                        </div>
+                        <div class="color_tag">
+                            <h6>color ${Color}</h6>
+                            <h6>${Tag}</h6>
+                        </div>`;
+    
+    main_shoes_bx.appendChild(card)
+    });
+    });
 
 });
 
