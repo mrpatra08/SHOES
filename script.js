@@ -641,7 +641,7 @@ let right_input_icon = document.getElementById("right_input_icon");
 
 //filtering using left price input
 
-left_input.addEventListener("click", () => {
+left_input.addEventListener("change", () => {
     let array_1000_50000 = all_shoes_array.filter((el) => {
         return el.Price <= 50000;
     });
@@ -682,7 +682,7 @@ main_shoes_bx.appendChild(card)
 
 // filtering by right price 
 
-right_input.addEventListener("click", () => {
+right_input.addEventListener("change", () => {
     let array_50001_100000 = all_shoes_array.filter((el) => {
         return el.Price >= 50000;
     });
@@ -696,7 +696,7 @@ right_input.addEventListener("click", () => {
 
     document.getElementById('right_input_price').innerText = price_box_value_right + 50000;
 
-    main_shoes_bx.innerHTML = '';
+    // main_shoes_bx.innerHTML = '';  ye comment out isiliye kiya hai taaki left pricing ke shoes and right pricing ke shoes eksth rhe ;
 
     array_50001_100000_right.forEach((el,i) => {
         const{Img,Name,Category,MRP,Price,Tag,Color} = el;
@@ -716,7 +716,41 @@ right_input.addEventListener("click", () => {
 
 main_shoes_bx.appendChild(card)
 });
-})
+
+});
+
+    //filter by colours 
+
+    const color = ['white','gray-white','yellow','yellow-black','orange','green','sky-blue','pink','red','blue','gray-black','brown','black'];
+
+    Array.from(document.getElementsByClassName('color')).foreach((el,i) => {
+        el.addEventListener('click', () => {
+            const color_array = all_shoes_array.filter((el)=>{
+                return el.ColorTag === color[i];
+            });
+            main_shoes_bx.innerHTML = '';
+
+            color_array.forEach((el,i) => {
+                const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                            <h5 class="title" title = "${Name}">${Name}</h5>
+                            <p>${Category} shoes</p>
+                            <div class="price">
+                                <h5>Rs ${Price}</h5>
+                                <h5>MRP: <del>Rs ${MRP}</del></h5>
+                            </div>
+                            <div class="color_tag">
+                                <h6>color ${Color}</h6>
+                                <h6>${Tag}</h6>
+                            </div>`;
+        
+        main_shoes_bx.appendChild(card)
+        });
+
+        })
+    })
 
 
 
