@@ -638,22 +638,67 @@ let left_input = document.getElementById("left_input");
 let left_input_icon = document.getElementById("left_input_icon");
 let right_input_icon = document.getElementById("right_input_icon");
 
-let array_1000_50000 = all_shoes_array.filter((el) => {
-    return el.Price <= 50000;
-});
 
 //filtering using left price input
-left_input.addEventListener("change", () => {
+
+left_input.addEventListener("click", () => {
+    let array_1000_50000 = all_shoes_array.filter((el) => {
+        return el.Price <= 50000;
+    });
+
+    
     left_input_icon.style.left = left_input.value + "%";
 
     let price_box_value_left = (50000/100)*left_input.value;
     let array_1000_50000_left = array_1000_50000.filter((el) => {
-        return el.Price <= price_box_value_left;
-    })
+        return el.Price >= price_box_value_left;
+    });
+
+    document.getElementById('left_input_price').innerText = price_box_value_left;
 
     main_shoes_bx.innerHTML = '';
 
     array_1000_50000_left.forEach((el,i) => {
+        const{Img,Name,Category,MRP,Price,Tag,Color} = el;
+        let card = document.createElement('a');
+        card.classList.add('card');
+        card.innerHTML = `<img src="${Img}" alt="${Name}">
+                    <h5 class="title" title = "${Name}">${Name}</h5>
+                    <p>${Category} shoes</p>
+                    <div class="price">
+                        <h5>Rs ${Price}</h5>
+                        <h5>MRP: <del>Rs ${MRP}</del></h5>
+                    </div>
+                    <div class="color_tag">
+                        <h6>color ${Color}</h6>
+                        <h6>${Tag}</h6>
+                    </div>`;
+
+main_shoes_bx.appendChild(card)
+});
+})
+
+
+
+// filtering by right price 
+
+right_input.addEventListener("click", () => {
+    let array_50001_100000 = all_shoes_array.filter((el) => {
+        return el.Price >= 50000;
+    });
+    
+    right_input_icon.style.left = right_input.value + "%";
+
+    let price_box_value_right = (50000/100)*right_input.value;
+    let array_50001_100000_right = array_50001_100000.filter((el) => {
+        return el.Price <= (price_box_value_right+50000);
+    });
+
+    document.getElementById('right_input_price').innerText = price_box_value_right + 50000;
+
+    main_shoes_bx.innerHTML = '';
+
+    array_50001_100000_right.forEach((el,i) => {
         const{Img,Name,Category,MRP,Price,Tag,Color} = el;
         let card = document.createElement('a');
         card.classList.add('card');
